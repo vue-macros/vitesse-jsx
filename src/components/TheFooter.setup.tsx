@@ -1,15 +1,16 @@
-<template>
+export default (
   <nav mt-6 inline-flex gap-2 text-xl>
-    <button icon-btn @click="toggleDark()">
+    <button icon-btn onClick={() => toggleDark()}>
       <div i-carbon-sun dark:i-carbon-moon />
     </button>
 
     <a
-      i-carbon-logo-github icon-btn
+      i-carbon-logo-github
+      icon-btn
       rel="noreferrer"
       href="https://github.com/antfu/vitesse-lite"
       target="_blank"
       title="GitHub"
     />
   </nav>
-</template>
+)

@@ -3,12 +3,15 @@
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
+import Components from 'unplugin-vue-components-jsx/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import UnoCSS from 'unocss/vite'
 import VueMacros from 'unplugin-vue-macros/vite'
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
+import SetupSFC from '@vue-macros/setup-sfc/vite'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import Inspect from 'vite-plugin-inspect'
 
 export default defineConfig({
   resolve: {
@@ -17,21 +20,23 @@ export default defineConfig({
     },
   },
   plugins: [
-    VueMacros({
-      defineOptions: false,
-      defineModels: false,
-      plugins: {
-        vue: Vue({
-          script: {
-            propsDestructure: true,
-            defineModel: true,
-          },
-        }),
-      },
+    SetupSFC({
+      include: [/\.setup\.[cm]?[jt]sx?(?=\?definePage|$)/],
     }),
 
     // https://github.com/posva/unplugin-vue-router
-    VueRouter(),
+    VueRouter({
+      extensions: ['.vue', '.setup.tsx'],
+    }),
+
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?$/],
+        }),
+        vueJsx: vueJsx(),
+      },
+    }),
 
     // https://github.com/antfu/unplugin-auto-import
     AutoImport({
@@ -54,11 +59,20 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
+      extensions: ['vue', 'setup.tsx'],
+      include: [/\.vue$/, /\.setup\.[cm]?[jt]sx?/],
+      types: [{
+        from: 'vue-router/auto',
+        names: ['RouterLink', 'RouterView'],
+      }],
     }),
 
     // https://github.com/antfu/unocss
     // see uno.config.ts for config
     UnoCSS(),
+
+    // https://github.com/vuejs/devtools-next
+    Inspect(),
   ],
 
   // https://github.com/vitest-dev/vitest

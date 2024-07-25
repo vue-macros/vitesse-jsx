@@ -1,18 +1,21 @@
-<script setup lang="ts">
-const modelValue = defineModel()
-</script>
+const props = defineProps<{
+  placeholder: string
+  autocomplete: string
+}>()
 
-<template>
+const modelValue = defineModel()
+
+export default (
   <input
+    {...props}
     id="input"
-    v-model="modelValue"
+    v-model={modelValue.value}
     type="text"
-    v-bind="$attrs"
     p="x-4 y-2"
     w="250px"
     text="center"
     bg="transparent"
     border="~ rounded gray-200 dark:gray-700"
     outline="none active:none"
-  >
-</template>
+  />
+)

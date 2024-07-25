@@ -1,4 +1,3 @@
-<script setup lang="ts" generic="T extends any, O extends any">
 defineOptions({
   name: 'IndexPage',
 })
@@ -10,9 +9,8 @@ function go() {
   if (name.value)
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
-</script>
 
-<template>
+export default (
   <div>
     <div i-carbon-campsite inline-block text-4xl />
     <p>
@@ -25,22 +23,21 @@ function go() {
     </p>
 
     <div py-4 />
-
     <TheInput
-      v-model="name"
+      v-model={name.value}
       placeholder="What's your name?"
       autocomplete="false"
-      @keydown.enter="go"
+      onKeydown_enter={go}
     />
 
     <div>
       <button
         class="m-3 text-sm btn"
-        :disabled="!name"
-        @click="go"
+        disabled={!name}
+        onClick={go}
       >
         Go
       </button>
     </div>
   </div>
-</template>
+)

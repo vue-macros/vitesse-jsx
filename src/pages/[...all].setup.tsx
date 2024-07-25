@@ -1,5 +1,5 @@
-<template>
+export default (
   <div>
     Not Found
   </div>
-</template>
+)

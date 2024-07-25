@@ -1,19 +1,17 @@
-<script setup lang="ts">
 const props = defineProps<{
   initial: number
 }>()
 
 const { count, inc, dec } = useCounter(props.initial)
-</script>
 
-<template>
+export default (
   <div>
-    {{ count }}
-    <button class="inc" @click="inc()">
+    { count }
+    <button class="inc" onClick={() => inc()}>
       +
     </button>
-    <button class="dec" @click="dec()">
+    <button class="dec" onClick={() => dec()}>
       -
     </button>
   </div>
-</template>
+)

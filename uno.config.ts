@@ -4,7 +4,10 @@ import {
   presetIcons,
   presetUno,
   presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup,
 } from 'unocss'
+import transformerAttributifyJsx from 'transformer-attributify-jsx-sg'
 
 export default defineConfig({
   shortcuts: [
@@ -25,5 +28,10 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
+  ],
+  transformers: [
+    transformerDirectives(),
+    transformerAttributifyJsx(),
+    transformerVariantGroup(),
   ],
 })
