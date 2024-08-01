@@ -10,12 +10,16 @@ function go() {
     router.push(`/hi/${encodeURIComponent(name.value)}`)
 }
 
+const route = useRoute('/')
+
 export default (
   <div>
     <div i-carbon-campsite inline-block text-4xl />
     <p>
       <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-        Vitesse Lite
+        Vitesse
+        {' '}
+        {route.meta.title}
       </a>
     </p>
     <p>
@@ -41,3 +45,9 @@ export default (
     </div>
   </div>
 )
+
+definePage({
+  meta: {
+    title: 'JSX',
+  },
+})

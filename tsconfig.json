@@ -26,24 +26,13 @@
   },
   "vueCompilerOptions": {
     "plugins": [
-      "@vue-macros/volar/define-options",
-      "@vue-macros/volar/define-models",
-      "@vue-macros/volar/define-emit",
-      "@vue-macros/volar/define-prop",
-      "@vue-macros/volar/define-props",
-      "@vue-macros/volar/define-props-refs",
-      "@vue-macros/volar/short-vmodel",
-      "@vue-macros/volar/define-slots",
-      "@vue-macros/volar/export-expose",
-      "@vue-macros/volar/jsx-directive",
-      "@vue-macros/volar/export-render",
-      "@vue-macros/volar/setup-jsdoc",
-      "@vue-macros/volar/setup-lang",
-      "@vue-macros/volar/template-ref",
-      "@vue-macros/volar/define-generic",
-      "@vue-macros/volar/setup-sfc",
+      "unplugin-vue-macros/volar",
       "volar-plugin-ignore-attributes"
-    ]
+    ],
+    "vueMacros": {
+      "setupSFC": true,
+      "exportRender": true
+    }
   },
   "exclude": [
     "dist",
