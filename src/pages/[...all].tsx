@@ -1,4 +1,4 @@
-export default (
+export default () => (
   <div>
     Not Found
   </div>

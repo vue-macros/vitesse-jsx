@@ -1,4 +1,4 @@
-export default (
+export default () => (
   <nav mt-6 inline-flex gap-2 text-xl>
     <button icon-btn onClick={() => toggleDark()}>
       <div i-carbon-sun dark:i-carbon-moon />

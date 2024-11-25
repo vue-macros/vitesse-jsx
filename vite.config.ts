@@ -1,15 +1,14 @@
 /// <reference types="vitest" />
 
 import path from 'node:path'
-import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components-jsx/vite'
-import AutoImport from 'unplugin-auto-import/vite'
-import UnoCSS from 'unocss/vite'
-import VueMacros from 'unplugin-vue-macros/vite'
-import VueRouter from 'unplugin-vue-router/vite'
-import { VueRouterAutoImports } from 'unplugin-vue-router'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import VueJsxMacros from '@vue-macros/jsx/vite'
+import UnoCSS from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components-jsx/vite'
+import { VueRouterAutoImports } from 'unplugin-vue-router'
+import VueRouter from 'unplugin-vue-router/vite'
+import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
 
 export default defineConfig({
@@ -19,18 +18,17 @@ export default defineConfig({
     },
   },
   plugins: [
-    VueMacros({
-      plugins: {
-        vue: Vue({
-          include: [/\.vue$/, /\.setup.[jt]sx$/],
-        }),
-        vueJsx: vueJsx(),
-        // https://github.com/posva/unplugin-vue-router
-        vueRouter: VueRouter({
-          extensions: ['.vue', '.setup.tsx', '.setup.jsx'],
-        }),
-      },
-      setupSFC: true,
+    // https://github.com/vue-macros/vue-macros
+    VueJsxMacros({
+      jsxMacros: true,
+    }),
+
+    // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx
+    vueJsx(),
+
+    // https://github.com/posva/unplugin-vue-router
+    VueRouter({
+      extensions: ['.tsx', '.jsx'],
     }),
 
     // https://github.com/antfu/unplugin-auto-import
@@ -53,8 +51,8 @@ export default defineConfig({
     // https://github.com/antfu/vite-plugin-components
     Components({
       dts: true,
-      extensions: ['vue', 'setup.tsx', 'setup.jsx'],
-      include: [/\.setup\.[jt]sx?/],
+      extensions: ['tsx', 'jsx'],
+      include: [/\.[jt]sx?/],
       types: [{
         from: 'vue-router/auto',
         names: ['RouterLink', 'RouterView'],
@@ -65,7 +63,7 @@ export default defineConfig({
     // see uno.config.ts for config
     UnoCSS(),
 
-    // https://github.com/vuejs/devtools-next
+    // https://github.com/antfu-collective/vite-plugin-inspect
     Inspect(),
   ],
 

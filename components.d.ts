@@ -8,7 +8,7 @@ export {}
 declare global {
   const RouterLink = {} as typeof import('vue-router/auto')['RouterLink']
   const RouterView = {} as typeof import('vue-router/auto')['RouterView']
-  const TheCounter = {} as typeof import('./src/components/TheCounter.setup.tsx')['default']
-  const TheFooter = {} as typeof import('./src/components/TheFooter.setup.tsx')['default']
-  const TheInput = {} as typeof import('./src/components/TheInput.setup.tsx')['default']
+  const TheCounter = {} as typeof import('./src/components/TheCounter.tsx')['default']
+  const TheFooter = {} as typeof import('./src/components/TheFooter.tsx')['default']
+  const TheInput = {} as typeof import('./src/components/TheInput.tsx')['default']
 }

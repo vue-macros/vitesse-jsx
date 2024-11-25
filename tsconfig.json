@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ESNext",
     "jsx": "preserve",
+    "jsxImportSource": "@vue-macros/jsx",
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "module": "ESNext",
@@ -11,9 +12,7 @@
     },
     "resolveJsonModule": true,
     "types": [
-      "vue/jsx",
       "vite/client",
-      "unplugin-vue-macros/macros-global",
       "unplugin-vue-router/client"
     ],
     "allowJs": true,
@@ -24,19 +23,8 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
   },
-  "vueCompilerOptions": {
-    "plugins": [
-      "unplugin-vue-macros/volar",
-      "volar-plugin-ignore-attributes"
-    ],
-    "vueMacros": {
-      "setupSFC": true,
-      "exportRender": true
-    }
-  },
   "exclude": [
     "dist",
-    "node_modules",
     "eslint.config.js"
   ]
 }
