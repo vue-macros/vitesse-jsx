@@ -7,7 +7,7 @@
 </h6>
 
 <h5 align='center'>
-<b>轻量版的 <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
+<b>JSX版的 <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
 </h5>
 
 <br>
@@ -22,9 +22,13 @@
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - 就是快！
 
+- 🪄 [JSX 宏](https://github.com/vue-macros/vue-macros) - 包含 `jsx-directive` & `jsx-macros` & `jsx-ref`.
+
 - 🗂 [基于文件的路由](./src/pages)
 
 - 📦 [组件自动化加载](./src/components)
+
+- 📑 [布局系统](./src/layouts)
 
 - 🎨 [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 
@@ -45,7 +49,6 @@
 ## 从 [Vitesse](https://github.com/antfu/vitesse) 中删除了以下特性
 
 - ~~i18n~~
-- ~~Layouts~~
 - ~~SSG~~
 - ~~PWA~~
 - ~~Markdown~~
@@ -65,6 +68,7 @@
 
 - [Vue Router](https://github.com/vuejs/vue-router)
   - [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) - 以文件系统为基础的路由
+  - [`vite-plugin-vue-layouts`](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) - 页面布局系统
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - 直接使用 Composition API 等，无需导入
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - 自动加载组件
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - 探索并扩展更多的宏和语法糖到 Vue 中

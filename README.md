@@ -7,7 +7,7 @@
 </h6>
 
 <h5 align='center'>
-<b>Lightweight version of <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
+<b>JSX version of <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
 </h5>
 
 <br>
@@ -21,9 +21,13 @@
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [ESBuild](https://github.com/evanw/esbuild) - born with fastness
 
+- 🪄 [JSX Macros](https://github.com/vue-macros/vue-macros) - Include `jsx-directive` & `jsx-macros` & `jsx-ref`.
+
 - 🗂 [File based routing](./src/pages)
 
 - 📦 [Components auto importing](./src/components)
+
+- 📑 [Layout system](./src/layouts)
 
 - 🎨 [UnoCSS](https://github.com/antfu/unocss) - The instant on-demand atomic CSS engine.
 
@@ -44,7 +48,6 @@ See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
 ## Dropped Features from [Vitesse](https://github.com/antfu/vitesse)
 
 - ~~i18n~~
-- ~~Layouts~~
 - ~~SSG~~
 - ~~PWA~~
 - ~~Markdown~~
@@ -64,6 +67,7 @@ See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
 
 - [Vue Router](https://github.com/vuejs/vue-router)
   - [`unplugin-vue-router`](https://github.com/posva/unplugin-vue-router) - file system based routing
+  - [`vite-plugin-vue-layouts`](https://github.com/JohnCampionJr/vite-plugin-vue-layouts) - layouts for pages
 - [`unplugin-auto-import`](https://github.com/antfu/unplugin-auto-import) - Directly use Vue Composition API and others without importing
 - [`unplugin-vue-components`](https://github.com/antfu/unplugin-vue-components) - components auto import
 - [`unplugin-vue-macros`](https://github.com/sxzz/unplugin-vue-macros) - Explore and extend more macros and syntax sugar to Vue.
