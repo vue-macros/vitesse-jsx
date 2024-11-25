@@ -24,7 +24,7 @@ export default defineComponent(() => {
       </p>
 
       <div py-4 />
-      <TheCounter />
+
       <TheInput
         v-model={name.value}
         placeholder="What's your name?"
@@ -47,6 +47,6 @@ export default defineComponent(() => {
 
 definePage({
   meta: {
-    title: 'Home',
+    layout: 'home',
   },
 })

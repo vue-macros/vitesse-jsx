@@ -4,4 +4,10 @@ declare module 'vue' {
   }
 }
 
+declare module 'vue-router' {
+  interface RouteMeta {
+    layout?: string
+  }
+}
+
 export {}

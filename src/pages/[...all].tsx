@@ -3,3 +3,9 @@ export default () => (
     Not Found
   </div>
 )
+
+definePage({
+  meta: {
+    layout: '404',
+  },
+})

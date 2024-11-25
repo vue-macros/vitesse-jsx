@@ -6,8 +6,8 @@ export {}
 
 /* prettier-ignore */
 declare global {
-  const RouterLink = {} as typeof import('vue-router/auto')['RouterLink']
-  const RouterView = {} as typeof import('vue-router/auto')['RouterView']
+  const RouterLink = {} as typeof import('vue-router')['RouterLink']
+  const RouterView = {} as typeof import('vue-router')['RouterView']
   const TheCounter = {} as typeof import('./src/components/TheCounter.tsx')['default']
   const TheFooter = {} as typeof import('./src/components/TheFooter.tsx')['default']
   const TheInput = {} as typeof import('./src/components/TheInput.tsx')['default']

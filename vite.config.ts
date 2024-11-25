@@ -10,6 +10,7 @@ import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
 import Inspect from 'vite-plugin-inspect'
+import Layouts from 'vite-plugin-vue-layouts'
 
 export default defineConfig({
   resolve: {
@@ -28,10 +29,15 @@ export default defineConfig({
 
     // https://github.com/posva/unplugin-vue-router
     VueRouter({
-      extensions: ['.tsx', '.jsx'],
+      extensions: ['.jsx', '.tsx'],
     }),
 
-    // https://github.com/antfu/unplugin-auto-import
+    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    Layouts({
+      extensions: ['jsx', 'tsx'],
+    }),
+
+    // https://github.com/unplugin/unplugin-auto-import
     AutoImport({
       imports: [
         'vue',
@@ -39,7 +45,13 @@ export default defineConfig({
         VueRouterAutoImports,
         {
           // add any other imports you were relying on
-          'vue-router/auto': ['useLink'],
+          'vue-router': ['useLink', 'RouterView', 'RouterLink'],
+        },
+        {
+          from: 'vue',
+          imports: [
+            ['shallowRef', 'useRef'],
+          ],
         },
       ],
       dts: true,
@@ -48,18 +60,27 @@ export default defineConfig({
       ],
     }),
 
-    // https://github.com/antfu/vite-plugin-components
+    // https://github.com/unplugin/vite-plugin-components
     Components({
       dts: true,
-      extensions: ['tsx', 'jsx'],
+      extensions: ['jsx', 'tsx'],
       include: [/\.[jt]sx?/],
-      types: [{
-        from: 'vue-router/auto',
-        names: ['RouterLink', 'RouterView'],
-      }],
+      resolvers: [
+        {
+          type: 'component',
+          resolve: (name) => {
+            if (['RouterLink', 'RouterView'].includes(name)) {
+              return {
+                name,
+                from: 'vue-router',
+              }
+            }
+          },
+        },
+      ],
     }),
 
-    // https://github.com/antfu/unocss
+    // https://github.com/unocss/unocss
     // see uno.config.ts for config
     UnoCSS(),
 
