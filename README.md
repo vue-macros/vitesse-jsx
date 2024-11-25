@@ -3,17 +3,17 @@
 </p>
 
 <h6 align='center'>
-<a href="https://vitesse-lite.netlify.app/">Live Demo</a>
+<a href="https://vitesse-jsx.netlify.app/">Live Demo</a>
 </h6>
 
 <h5 align='center'>
-<b>JSX version of <a href="https://github.com/antfu/vitesse">Vitesse</a></b>
+<b>JSX version of <a href="https://github.com/@vue-macros/vitesse-jsx">Vitesse</a></b>
 </h5>
 
 <br>
 
 <p align='center'>
-<b>English</b> | <a href="https://github.com/antfu/vitesse-lite/blob/main/README.zh-CN.md">简体中文</a>
+<b>English</b> | <a href="https://github.com/@vue-macros/vitesse-jsx/blob/main/README.zh-CN.md">简体中文</a>
 <!-- Contributors: Thanks for geting interested, however we DON'T accept new transitions to the README, thanks. -->
 </p>
 
@@ -43,7 +43,7 @@
 
 <br>
 
-See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
+See [Vitesse](https://github.com/antfu/vitesse) for full feature set.
 
 ## Dropped Features from [Vitesse](https://github.com/antfu/vitesse)
 
@@ -77,14 +77,14 @@ See [Vitesse](https://github.com/antfu/vitesse) for full featureset.
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse-lite/generate).
+[Create a repo from this template on GitHub](https://github.com/vue-macros/vitesse-jsx/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit antfu/vitesse-lite my-vitesse-app
+npx degit @vue-macros/vitesse-jsxmy-vitesse-app
 cd my-vitesse-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```

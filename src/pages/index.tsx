@@ -13,7 +13,7 @@ export default defineComponent(() => {
     <div>
       <div i-carbon-campsite inline-block text-4xl />
       <p>
-        <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
+        <a rel="noreferrer" href="https://github.com/vue-macros/vitesse-jsx" target="_blank">
           Vitesse
           {' '}
           {route.meta.title}
