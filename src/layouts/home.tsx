@@ -1,4 +1,4 @@
-export default () => (
+export default defineComponent(() => () => (
   <main
     px-4
     py-10
@@ -10,4 +10,4 @@ export default () => (
       [Home Layout]
     </div>
   </main>
-)
+))
