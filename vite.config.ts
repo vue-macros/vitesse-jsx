@@ -5,7 +5,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueJsxMacros from '@vue-macros/jsx/vite'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components-jsx/vite'
+import Components from 'unplugin-vue-components/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
 import VueRouter from 'unplugin-vue-router/vite'
 import { defineConfig } from 'vite'
@@ -20,9 +20,7 @@ export default defineConfig({
   },
   plugins: [
     // https://github.com/vue-macros/vue-macros
-    VueJsxMacros({
-      jsxMacros: true,
-    }),
+    VueJsxMacros(),
 
     // https://github.com/vitejs/vite-plugin-vue/tree/main/packages/plugin-vue-jsx
     vueJsx(),

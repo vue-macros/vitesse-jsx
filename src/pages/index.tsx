@@ -25,6 +25,8 @@ export default defineComponent(() => {
 
       <div py-4 />
 
+      <TheCounter />
+
       <TheInput
         v-model={name.value}
         placeholder="What's your name?"

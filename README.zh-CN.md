@@ -85,7 +85,7 @@
 如果您更喜欢使用更干净的 git 历史记录手动执行此操作
 
 ```bash
-npx degit @vue-macros/vitesse-jsxmy-vitesse-app
+npx degit @vue-macros/vitesse-jsx my-vitesse-app
 cd my-vitesse-app
 pnpm i # 如果你没装过 pnpm, 可以先运行: npm install -g pnpm
 ```
